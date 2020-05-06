@@ -2,13 +2,14 @@
   <h1>BURGERS App using Express Handlebars</h1>
   <h6>Welcome to My Restaurant</h6>
 </div>
-{{!-- <h1>Buger!</h1>
-<h2>Cats that are not sleepy!</h2>
+<h1>Buger!</h1>
+<h2>Burgers that are ready</h2>
 
 <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  {{#each burger}}
+    {{#unless devoured}}
+      {{this.name_burger}}
+      <button data-id = {{this.id}} class="devourit">Devour </button>
     {{/unless}}
   {{/each}}
 </ul>
@@ -16,19 +17,20 @@
 <h2>Burger that are been eaten!</h2>
 
 <ul>
-  {{#each burgerdate}}
+  {{#each burger}}
     {{#if devoured}}
    {{this.name_burger}}
+   <button data-id = {{this.id}} class="deleteburger">Delete burger </button>
     {{/if}}
   {{/each}}
-</ul> --}}
+</ul>
 
 <h2>Add a Burger</h2>
 <form class="create-form">
 
   <div class="form-group">
     <label for="customburger">Burger Name:</label>
-    <input type="text" name="customburger">
+    <input type="text" id="customburger">
   </div>
 
   <button type="submit">Add Burger</button>

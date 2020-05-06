@@ -1,21 +1,14 @@
 console.log("Have a burger!")
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-sleep").on("click", function(event) {
-      var id = $(this).data("id");
-      var newSleep = $(this).data("newsleep");
-  
-      var newSleepState = {
-        sleepy: newSleep
-      };
-  
+    $(".devourit").on("click", function(event) {
+      var id = $(this).attr("data-id");
       // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
-        type: "PUT",
-        data: newSleepState
+      $.ajax("/api/burger/" + id, {
+        type: "PUT"
       }).then(
         function() {
-          console.log("changed sleep to", newSleep);
+          console.log("burger has been eaten");
           // Reload the page to get the updated list
           location.reload();
         }
@@ -43,7 +36,7 @@ $(function() {
       );
     });
   
-    $(".delete-burger").on("click", function(event) {
+    $(".deleteburger").on("click", function(event) {
       var id = $(this).data("id");
   
       // Send the DELETE request.
