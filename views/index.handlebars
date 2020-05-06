@@ -1,5 +1,8 @@
+<div class="jumbotron">
+  <h1>BURGERS App using Express Handlebars</h1>
+  <h6>Welcome to My Restaurant</h6>
+</div>
 {{!-- <h1>Buger!</h1>
-
 <h2>Cats that are not sleepy!</h2>
 
 <ul>
@@ -10,12 +13,12 @@
   {{/each}}
 </ul>
 
-<h2>Cats that are sleepy!</h2>
+<h2>Burger that are been eaten!</h2>
 
 <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+  {{#each burgerdate}}
+    {{#if devoured}}
+   {{this.name_burger}}
     {{/if}}
   {{/each}}
 </ul> --}}
@@ -24,8 +27,8 @@
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <label for="customburger">Burger Name:</label>
+    <input type="text" name="customburger">
   </div>
 
   <button type="submit">Add Burger</button>
